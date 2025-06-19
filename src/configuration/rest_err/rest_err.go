@@ -12,3 +12,11 @@ type Causes struct {
 	Message string
 }
 
+func NewRestError(message string, err string, code int, causes []Causes) RestErr {
+	return	RestErr{
+		Message: message,
+		Err: err,
+		Code: code,
+		Causes: causes,
+	}
+}
